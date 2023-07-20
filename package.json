@@ -1,0 +1,17 @@
+{
+  "scripts": {
+    "build": "tsc main.ts --outDir dist",
+    "run": "node dist/main.js",
+    "serve": "npm run build; npm run run"
+  },
+  "dependencies": {
+    "@types/node": "^18.15.9",
+    "browserify": "^17.0.0",
+    "csv": "^6.2.8",
+    "csv-parser": "^3.0.0",
+    "fs": "^0.0.1-security",
+    "gulp": "^4.0.2",
+    "typescript": "^4.7.4",
+    "uniq": "^1.0.1"
+  }
+}
