@@ -4,6 +4,10 @@
  * total number of words in the longer sentence.
  */
 export function getWordForWordSimilarity(sentence1: string, sentence2: string): number {
+  if (sentence1 === sentence2) {
+    return 100;
+  }
+
   const sortedWords1 = getSortedWords(sentence1);
   const sortedWords2 = getSortedWords(sentence2);
 

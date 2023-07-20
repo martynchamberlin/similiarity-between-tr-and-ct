@@ -10,7 +10,7 @@ export function getVerses() {
   }
 }
 
-export function getVerse(verseNumber: number) {
+export function getVerse(verseNumber: number): { tr: string, ct: string } {
   const verses = getVerses();
   return {
     tr: verses.tr[verseNumber - 1],
@@ -18,7 +18,7 @@ export function getVerse(verseNumber: number) {
   }
 }
 
-export function getSimilaritiesForEachVerse() {
+export function getSimilaritiesForEachVerse(): number[] {
   const verses = getVerses();
 
   return verses.tr.map((verse, index) => {
@@ -26,24 +26,24 @@ export function getSimilaritiesForEachVerse() {
   });
 }
 
-export function getSimilarityForAllVerses() {
+export function getSimilarityForAllVerses(): number {
   const similarities = getSimilaritiesForEachVerse();
   const totalSimilarity = similarities.reduce((a, b) => a + b, 0);
   return totalSimilarity / similarities.length;
 }
 
-export function getNumberOfVersesThatAreIdentical() {
-  const similarities = getSimilaritiesForEachVerse();
-  return similarities.filter(similarity => similarity === 100).length;
+export function getNumberOfVersesThatAreIdentical(): number {
+  const similarities = getVerses();
+  return similarities.tr.filter((verse, index) => verse === similarities.ct[index]).length;
 }
 
-export function getPercentageOfVersesThatAreIdentical() {
+export function getPercentageOfVersesThatAreIdentical(): number {
   const numberOfVersesThatAreIdentical = getNumberOfVersesThatAreIdentical();
   const numberOfVerses = getVerses().tr.length;
   return (numberOfVersesThatAreIdentical / numberOfVerses) * 100;
 }
 
-export function makeCSVOfEachVerse() {
+export function makeCSVOfEachVerse(): void {
   const verses = getVerses();
   const similarities = getSimilaritiesForEachVerse();
   const csv = verses.tr.map((_verse, index) => {

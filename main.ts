@@ -1,3 +1,3 @@
-import { getPercentageOfVersesThatAreIdentical } from './insights';
+import { getSimilarityForAllVerses } from './insights';
 
-console.log(getPercentageOfVersesThatAreIdentical());
+console.log(getSimilarityForAllVerses());
