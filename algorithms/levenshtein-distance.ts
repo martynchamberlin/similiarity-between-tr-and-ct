@@ -1,4 +1,11 @@
-export function levenshteinDistance(str1, str2) {
+export function getPercentageInLevenshtein(sentence1, sentence2) {
+  const maxLength = Math.max(sentence1.length, sentence2.length);
+  const levenshteinDistanceValue = levenshteinDistance(sentence1, sentence2);
+  const percentage = (levenshteinDistanceValue / maxLength) * 100;
+  return 100 - percentage;
+}
+
+function levenshteinDistance(str1, str2) {
   const m = str1.length;
   const n = str2.length;
 

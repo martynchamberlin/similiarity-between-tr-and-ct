@@ -1,6 +1,6 @@
 import { tr } from './tr';
 import { ct } from './ct';
-import { getPercentageOfSimilarity } from './percentage-of-similarity';
+import { getPercentageOfSimilarity } from './get-percentage-of-similarity';
 const fs = require('fs');
 
 export function getVerses() {
