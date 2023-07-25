@@ -30,23 +30,9 @@ Levenshtein: 96.83
 Word for Word: 97.19
 ```
 
-Two things are worth noting: First, the amount of _translatable_ differences in the Greek is nearly 30% lower than the underlying Greek itself, which is expected. Second, the two algorithms, while achieving different numbers, are within a percentage of each other.
+Two things are worth noting: First, the amount of _translatable_ differences in the English texts is nearly 30% lower than the underlying Greek itself, which is expected. Second, the two algorithms, while achieving different numbers, are within a percentage of each other.
 
-### Usage
-
-Import the desired function from `insights.ts` into `main.ts` and call it and log its output. Examples:
-
-```ts
-// Using the levenshtein distance algo and word-for-word respectively
-
-// 97.04306009137372, 97.43581960879729
-getSimilarityForAllVerses()
-
-// 69.64936533869549, 74.46273721251728
-getPercentageOfVersesThatAreIdentical()
-```
-
-Note that there are two different algorithms that can be used. A Levenshtein distance algorithm that is number-theory-heavy, and a word-for-word algorithm. This is controlled by the 3rd param passed to `getPercentageOfSimilarity()`.
+In the `output` directory one may find an `english.csv` and a `greek.csv` to see the verse-by-verse breakdown of the algorithms.
 
 ### To build the app:
 
