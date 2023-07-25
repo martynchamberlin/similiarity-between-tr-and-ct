@@ -19,7 +19,7 @@ export function getWordForWordSimilarity(sentence1: string, sentence2: string): 
   return percentage;
 }
 
-function getMatchingWords(sentence1: string[], sentence2: string[]) {
+function getMatchingWords(sentence1: string[], sentence2: string[]): string[] {
   const result: string[] = [];
 
   for (let i = 0; i < sentence1.length; i++) {
@@ -34,5 +34,5 @@ function getMatchingWords(sentence1: string[], sentence2: string[]) {
 }
 
 function getSortedWords(sentence: string): string[] {
-  return sentence.split(' ').map(word => word.toLowerCase().replace(/[^0-9a-z]/gi, '')).sort();
+  return sentence.split(' ').map(word => word.toLowerCase().replace(/[^0-9a-zα-ω]/gi, '')).sort();
 }
