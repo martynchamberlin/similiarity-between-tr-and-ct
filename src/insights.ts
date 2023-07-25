@@ -1,6 +1,7 @@
 import { getPercentageOfSimilarity } from './get-percentage-of-similarity';
 const fs = require('fs');
 import { VerseSimilarity, TotalSimilarity, Sources, Verses } from './types';
+import { round } from './round';
 
 export function getVerses(sources: Sources): Verses {
   return {
@@ -43,8 +44,8 @@ export function getPercentageOfVersesThatAreIdentical(sources: Sources): number 
 export function makeCSVOfEachVerse(sources: Sources, filename: string): void {
   const verses = getVerses(sources);
   const similarities = getSimilaritiesForEachVerse(sources);
-  const csv = `Verse number,Levenshtein,Word for Word\n${verses.src1.map((_verse, index) => {
-    return `${index + 1},${similarities[index].levenshtein},${similarities[index].wordForWord}`;
+  const csv = `Verse number,Levenshtein,Word for word\n${verses.src1.map((_verse, index) => {
+    return `${index + 1},${round(similarities[index].levenshtein)},${round(similarities[index].wordForWord)}`;
   }).join('\n')}`;
 
   fs.writeFile(`output/${filename}.csv`, csv, (err) => {
