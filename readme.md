@@ -1,10 +1,6 @@
 # Percentage of similarity between TR and CT
 
-This calculates the similarity between the Scrivener 1881 edition of the Textus Receptus (TR) and the 2010 edition of the SBL Greek New Testament (CT). It does this for both the Greek texts as well as their English translation counterparts, with the Critical Text taking on the Elizabethan English of the King James Translation (1769 edition) for a true apples-to-apples comparison. The insights are achieved using two different algorithms, as discussed below.
-
-For context to what prompted this, see [this Patreon update from Dr. Mark Ward](https://www.patreon.com/posts/math-wiz-needed-86367127):
-
-> I have two text files of the English New Testament, and I need someone with math skills to help me figure out how to accurately and succinctly—and mathematically—describe how similar they are. This is for the KJV Parallel Bible: one file is the standard 1769 KJV; the other file is the KJV as it would be if it were based on the critical text. I'd like to describe mathematically what percentage of words are exactly the same, and I'm stumbling. I have taught 5th grade homeschool math twice, but I am out of my depth!
+This analytical tool calculates the similarity between the Scrivener 1881 edition of the Textus Receptus (TR) and the 2010 edition of the SBL Greek New Testament (a critical text, CT). The tool works for both the Greek texts as well as their English counterparts in the KJV Parallel Bible (kjvparallelbible.org). The KJV Parallel Bible "translates" the critical text into the Elizabethan English of the King James Version for a true apples-to-apples comparison, in English, of the two major families of printed editions of the Greek New Testament. These insights are achieved using two different algorithms, as discussed below.
 
 ### Algorithms
 
@@ -15,7 +11,7 @@ This comparison is implemented via two algorithms.
 
 ### Results
 
-The output of the application yields this:
+The output of the application yields the following results:
 
 ```
 Percentage of verses in Greek that are identical: 40.29
@@ -30,7 +26,12 @@ Levenshtein: 96.83
 Word for Word: 97.19
 ```
 
-A few things are worth noting. First, the amount of _translatable_ differences in the English texts is nearly 30% lower than the underlying Greek itself, which is expected. Second, the two algorithms, while achieving different numbers, are within a percentage of each other, which gives high confidence to the fidelity of the two approaches. Third, it intuitively make sense that the word-for-word algorithm consistently scores slightly better since it doesn't take word order and punctuation into account.
+A few things are worth noting.
+
+1. First, the amount of _translatable_ differences in the English texts is nearly 30% lower than the underlying Greek itself, which is expected, because many, many textual variants in the Greek New Testament manuscript tradition are word-order or spelling or other minor differences that make no difference to the meaning of the sentences in which they are found.
+2. Second, the two algorithms produce final percentages that are very closet to each other, a result which gives high confidence to the fidelity of the two approaches.
+3. Third, the word-for-word algorithm consistently scores slightly higher than the Levenshtein algorithm, since it doesn't take word order and punctuation into account.
+4. Note that the KJV Parallel Bible website actually uses the NA28 as a base text; the text provided here uses the SBLGNT and therefore matches the edition in Logos.
 
 In the `output` directory one may find an `english.csv` and a `greek.csv` to see the verse-by-verse breakdown of the algorithms.
 
