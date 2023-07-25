@@ -30,7 +30,7 @@ Levenshtein: 96.83
 Word for Word: 97.19
 ```
 
-Two things are worth noting: First, the amount of _translatable_ differences in the English texts is nearly 30% lower than the underlying Greek itself, which is expected. Second, the two algorithms, while achieving different numbers, are within a percentage of each other.
+A few things are worth noting. First, the amount of _translatable_ differences in the English texts is nearly 30% lower than the underlying Greek itself, which is expected. Second, the two algorithms, while achieving different numbers, are within a percentage of each other, which gives high confidence to the fidelity of the two approaches. Third, it intuitively make sense that the word-for-word algorithm consistently scores slightly better since it doesn't take word order and punctuation into account.
 
 In the `output` directory one may find an `english.csv` and a `greek.csv` to see the verse-by-verse breakdown of the algorithms.
 
